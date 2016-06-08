@@ -128,8 +128,9 @@ def busca(nodo, alvo):
             fila.append(i)
         if a == alvo:
             return a
+#menorCurto((9, 12), z[9, 
+print z
 
-print imprime(20, 1)
 #Coordenacao
 findFus(G[1][2]['prot'])
 """
