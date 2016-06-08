@@ -31,7 +31,7 @@ class Prot:
 		self.curtoDe = curtoDe
 		self.curtoPara = curtoPara
 		self.fusivel = fusivel
-        self.zona = zona
+		self.zona = zona
 	def __str__(self):
 		return str(self.tipo)
 #===========================Arvore=================================
@@ -73,10 +73,12 @@ def findFus(pai):
 #Selecao do menor valor de curto da zona
 def menorCurto(nodo, listaZona):
     nodo = G[nodo[0]][nodo[1]]['prot']
-    if listaZona:
+    nodo.zona = []
+    if listaZona.any():
         for z in listaZona:
-            criaZona(nodo, z)
-    nodo.zona = set(nodo.zona)
+            if z != 0:
+                criaZona(nodo, z)
+        nodo.zona = set(nodo.zona)
     #Seleciona o menor valor de curto da zona
 
 #Cria a zona de um nodo
@@ -128,9 +130,9 @@ def busca(nodo, alvo):
             fila.append(i)
         if a == alvo:
             return a
-#menorCurto((9, 12), z[9, 
-print z
 
+menorCurto((1, 2), z[0, 3:])
+print G[1][2]['prot'].zona
 #Coordenacao
 findFus(G[1][2]['prot'])
 """
